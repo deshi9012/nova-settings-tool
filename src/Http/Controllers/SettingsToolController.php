@@ -8,7 +8,6 @@ use Spatie\Valuestore\Valuestore;
 class SettingsToolController
 {
     protected $store;
-    public $test;
 
     public function __construct()
     {

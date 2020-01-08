@@ -13,6 +13,8 @@ return [
 
     'path' => storage_path('app/settings.json'),
 
+    'model' => 'App\Storage',
+
     /*
     |--------------------------------------------------------------------------
     | Sidebar Label
