@@ -21,12 +21,15 @@ class SettingsToolServiceProvider extends ServiceProvider
             __DIR__.'/../config/nova-settings-tool.php' => config_path('nova-settings-tool.php'),
         ], 'nova-settings-tool');
 
+        $this->publishes([
+            __DIR__.'/../database/migrations/create_settings_table.php' => database_path('migrations/'.$timestamp.'_create_settings_table.php'),
+        ], 'migrations');
+        
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'settings-tool');
 
         $this->app->booted(function () {
             $this->routes();
         });
-        $this->loadMigrationsFrom(__DIR__.'/path/to/migrations');
     }
 
     protected function routes()
