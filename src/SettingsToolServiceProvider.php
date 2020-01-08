@@ -24,7 +24,7 @@ class SettingsToolServiceProvider extends ServiceProvider
         ], 'nova-settings-tool');
 
         $this->publishes([
-            __DIR__.'/../database/migrations/create_settings_table.php' => database_path('migrations/'.$timestamp.'_create_settings_table.php'),
+            __DIR__.'/database/migrations/create_settings_table.php' => database_path('migrations/'.$timestamp.'_create_settings_table.php'),
         ], 'migrations');
         
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'settings-tool');
