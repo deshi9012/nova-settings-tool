@@ -1,6 +1,6 @@
 <?php
 
-namespace Bakerkretzmar\NovaSettingsTool\Commands\TestCommand;
+namespace Bakerkretzmar\NovaSettingsTool\Commands;
 
 use Illuminate\Console\Command;
 
