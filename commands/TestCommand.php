@@ -37,5 +37,7 @@ class TestCommand extends Command
      */
     public function handle()
     {
+        var_dump('kur');
+        return 'kur2';
     }
 }
