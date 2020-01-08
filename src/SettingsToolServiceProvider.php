@@ -11,6 +11,8 @@ class SettingsToolServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        $timestamp = date('Y_m_d_His', time());
+
         if ($this->app->runningInConsole()) {
             $this->commands([
                 TestCommand::class
