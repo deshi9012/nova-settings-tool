@@ -44,12 +44,25 @@ class SettingsToolController
         return response()->json(compact('settings', 'panels'));
     }
 
-    public function write(Request $request)
+    public function write(Request $request = null)
     {
-        foreach ($request->all() as $key => $value) {
-            $this->store->put($key, $value);
+        if (config('nova-settings-tool.storage') == 'file') {
+            foreach ($request->all() as $key => $value) {
+                $this->store->put($key, $value);
+            }
+    
+            return response()->json();
+        } else {
+            $settings = config('nova-settings-tool.settings');
+            $tableName = config('nova-settings-tool.table_name');
+            $extractedKeys = [];
+            //First insert
+            foreach ($settings as $setting) {
+                $extractedKeys = $setting['key'];
+                DB::table($tableName)->updateOrInsert($setting, $setting);
+            }
+            DB::table($tableName)->whereNotIn('key', $extractedKeys)->delete();
+            return response()->json();
         }
-
-        return response()->json();
     }
 }

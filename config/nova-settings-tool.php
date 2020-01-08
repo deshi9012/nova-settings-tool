@@ -11,9 +11,13 @@ return [
     |
     */
 
-    'path' => storage_path('app/settings.json'),
+    'storage'    => 'database' ,
 
-    'model' => 'App\Storage',
+    'path'       => storage_path('app/settings.json'),
+
+    'model'      => 'App\Storage',
+
+    'table_name' => 'settings',
 
     /*
     |--------------------------------------------------------------------------
@@ -40,29 +44,29 @@ return [
     'settings' => [
 
         [
-            'key' => 'twitter_url',
+            'key'   => 'twitter_url',
             'label' => 'Twitter Profile',
             'panel' => 'Social',
         ],
 
         [
-            'key' => 'feature_42',
+            'key'   => 'feature_42',
             'label' => 'Feature 42',
-            'type' => 'toggle',
-            'help' => 'For the upcoming release. <a href="/docs#feature_42">Read more here.</a>',
+            'type'  => 'toggle',
+            'help'  => 'For the upcoming release. <a href="/docs#feature_42">Read more here.</a>',
         ],
 
         [
-            'key' => 'welcome',
+            'key'   => 'welcome',
             'label' => 'Welcome Message',
-            'type' => 'textarea',
-            'help' => 'Greeting for new users on their first login.',
+            'type'  => 'textarea',
+            'help'  => 'Greeting for new users on their first login.',
         ],
 
         [
-            'key' => 'snippet',
+            'key'   => 'snippet',
             'label' => 'Tracking Snippet',
-            'type' => 'code',
+            'type'  => 'code',
             'language' => 'htmlmixed',
             'help' => 'Analytics snippet to add to all marketing pages.',
         ],
