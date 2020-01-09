@@ -37,7 +37,7 @@ class TestCommand extends Command
      */
     public function handle()
     {
-        var_dump('kur');
-        return 'kur2';
+        $request = Request::create('/settings/manage', 'POST', []);
+        return Route::dispatch($request)->getContent();
     }
 }

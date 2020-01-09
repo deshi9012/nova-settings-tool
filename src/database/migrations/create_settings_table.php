@@ -15,10 +15,11 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('config_key');
+            $table->string('key');
             $table->string('type')->nullable();
             $table->string('value')->nullable();
             $table->string('label')->nullable();
+            $table->string('panel')->nullable();
             $table->string('placeholder')->nullable();
             $table->string('language')->nullable();
             $table->json('options')->nullable();
@@ -34,6 +35,6 @@ class CreateSettingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('settings');
     }
 }

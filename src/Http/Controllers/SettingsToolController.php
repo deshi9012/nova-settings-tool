@@ -53,16 +53,25 @@ class SettingsToolController
     
             return response()->json();
         } else {
-            $settings = config('nova-settings-tool.settings');
-            $tableName = config('nova-settings-tool.table_name');
-            $extractedKeys = [];
-            //First insert
-            foreach ($settings as $setting) {
-                $extractedKeys = $setting['key'];
-                DB::table($tableName)->updateOrInsert($setting, $setting);
-            }
-            DB::table($tableName)->whereNotIn('key', $extractedKeys)->delete();
-            return response()->json();
         }
+    }
+
+    public function manageSettings()
+    {
+        $settings = config('nova-settings-tool.settings');
+
+        $tableName = config('nova-settings-tool.table_name');
+        $extractedKeys = [];
+
+        foreach ($settings as $key => $setting) {
+            $extractedKeys[] = $setting['key'];
+            if (array_key_exists('options', $setting)) {
+                $setting['options'] = json_encode($setting['options']);
+            }
+            DB::table($tableName)->updateOrInsert(['key' =>$setting['key']], $setting);
+        }
+
+        DB::table($tableName)->whereNotIn('key', $extractedKeys)->delete();
+        return response()->json();
     }
 }
