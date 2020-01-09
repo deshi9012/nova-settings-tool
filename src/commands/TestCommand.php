@@ -3,6 +3,8 @@
 namespace Bakerkretzmar\NovaSettingsTool\Commands;
 
 use Illuminate\Console\Command;
+use Request;
+use Route;
 
 class TestCommand extends Command
 {

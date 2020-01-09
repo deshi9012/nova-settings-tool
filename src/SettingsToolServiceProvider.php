@@ -28,10 +28,11 @@ class SettingsToolServiceProvider extends ServiceProvider
         ], 'migrations');
         
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'settings-tool');
-
-        $this->app->booted(function () {
-            $this->routes();
-        });
+        
+        $this->loadRoutesFrom(__DIR__.'../routes/api.php');
+        //        $this->app->booted(function () {
+        //            $this->routes();
+        //        });
     }
 
     protected function routes()
