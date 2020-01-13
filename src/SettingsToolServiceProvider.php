@@ -5,7 +5,7 @@ namespace Bakerkretzmar\NovaSettingsTool;
 use Bakerkretzmar\NovaSettingsTool\Http\Middleware\Authorize;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Bakerkretzmar\NovaSettingsTool\Commands\TestCommand;
+use Bakerkretzmar\NovaSettingsTool\Commands\SyncCommand;
 
 class SettingsToolServiceProvider extends ServiceProvider
 {
@@ -15,7 +15,7 @@ class SettingsToolServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->commands([
-                TestCommand::class
+                SyncCommand::class
             ]);
         }
 
