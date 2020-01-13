@@ -6,21 +6,21 @@ use Illuminate\Console\Command;
 use Request;
 use Route;
 
-class TestCommand extends Command
+class SyncCommand extends Command
 {
     /**
     * The name and signature of the console command.
     *
     * @var string
     */
-    protected $signature = 'test:command';
+    protected $signature = 'settings:sync';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Simple Test Command';
+    protected $description = 'Settings sync command';
 
     /**
      * Create a new command instance.
@@ -39,7 +39,8 @@ class TestCommand extends Command
      */
     public function handle()
     {
-        $request = Request::create('/settings/manage', 'POST', []);
+        $request = Request::create('/nova-vendor/settings-tool/settings/manage', 'POST');
+
         return Route::dispatch($request)->getContent();
     }
 }
