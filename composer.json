@@ -35,8 +35,8 @@
     "psr-4": {
       "Bakerkretzmar\\NovaSettingsTool\\": "src/"
     },
-    "files": [
-      "src/Helpers/functions.php"
+    "classmap": [
+      "src/Helpers"
     ]
   },
   "autoload-dev": {
