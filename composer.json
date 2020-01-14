@@ -34,10 +34,7 @@
   "autoload": {
     "psr-4": {
       "Bakerkretzmar\\NovaSettingsTool\\": "src/"
-    },
-    "classmap": [
-      "src/Helpers"
-    ]
+    }
   },
   "autoload-dev": {
     "psr-4": {
