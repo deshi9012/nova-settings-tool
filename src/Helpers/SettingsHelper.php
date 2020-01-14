@@ -7,6 +7,9 @@ class SettingsHelper
 {
     public static function getValue($setting)
     {
+        /*
+        * TODO this have to be finished to read from file also
+        */
         if (config('nova-settings-tool.storage') == 'file') {
             return;
         } else {
