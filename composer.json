@@ -1,56 +1,59 @@
 {
-    "name": "bakerkretzmar/nova-settings-tool",
-    "description": "A Laravel Nova tool to manage application settings.",
-    "authors": [
-        {
-            "name": "Jacob Baker-Kretzmar",
-            "email": "jacobtbk@gmail.com",
-            "role": "Developer"
-        }
-    ],
-    "keywords": [
-        "laravel",
-        "nova",
-        "settings",
-        "tool"
-    ],
-    "homepage": "https://github.com/bakerkretzmar/nova-settings-tool",
-    "license": "MIT",
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://nova.laravel.com"
-        }
-    ],
-    "require": {
-        "php": ">=7.1.0",
-        "laravel/nova": "*",
-        "spatie/valuestore": "^1.2"
+  "name": "bakerkretzmar/nova-settings-tool",
+  "description": "A Laravel Nova tool to manage application settings.",
+  "authors": [
+    {
+      "name": "Jacob Baker-Kretzmar",
+      "email": "jacobtbk@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "keywords": [
+    "laravel",
+    "nova",
+    "settings",
+    "tool"
+  ],
+  "homepage": "https://github.com/bakerkretzmar/nova-settings-tool",
+  "license": "MIT",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://nova.laravel.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "laravel/nova": "*",
+    "spatie/valuestore": "^1.2"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^4.0",
+    "phpunit/phpunit": "^8.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Bakerkretzmar\\NovaSettingsTool\\": "src/"
     },
-    "require-dev": {
-        "orchestra/testbench": "^4.0",
-        "phpunit/phpunit": "^8.3"
-    },
-    "autoload": {
-        "psr-4": {
-            "Bakerkretzmar\\NovaSettingsTool\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Bakerkretzmar\\NovaSettingsTool\\Tests\\": "tests/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Bakerkretzmar\\NovaSettingsTool\\SettingsToolServiceProvider"
-            ]
-        }
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "files": [
+      "src/Helpers/functions.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Bakerkretzmar\\NovaSettingsTool\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Bakerkretzmar\\NovaSettingsTool\\SettingsToolServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
