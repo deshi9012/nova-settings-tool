@@ -37,9 +37,9 @@ class SettingsToolServiceProvider extends ServiceProvider
 
     protected function routes()
     {
-//        if ($this->app->routesAreCached()) {
-//            return;
-//        }
+        if ($this->app->routesAreCached()) {
+            return;
+        }
 
         Route::middleware([
             Authorize::class
