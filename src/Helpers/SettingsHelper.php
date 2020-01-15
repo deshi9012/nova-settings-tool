@@ -15,9 +15,9 @@ class SettingsHelper
         } else {
             $tableName = config('nova-settings-tool.table_name');
             return DB::table($tableName)
-        ->where('key', $setting)
-        ->select('value')
-        ->get()->value;
+                        ->where('key', $setting)
+                        ->select('value')
+                        ->first();
         }
     }
 }
