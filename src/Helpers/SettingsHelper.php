@@ -17,7 +17,7 @@ class SettingsHelper
             return DB::table($tableName)
         ->where('key', $setting)
         ->select('value')
-        ->get();
+        ->get()->value;
         }
     }
 }
